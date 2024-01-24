@@ -1,0 +1,79 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+}
+
+.square {
+  width: 60px; /* Ширина квадрата */
+  height: 60px; /* Высота квадрата */
+  margin-right: -1px; /* Убираем двойные границы между квадратами */
+  margin-bottom: -1px; /* Убираем двойные границы между рядами */
+
+  background: white;
+
+  border: 1px solid black; /* Граница квадрата */
+  font-size: 24px; /* Размер шрифта внутри квадрата */
+  line-height: 60px; /* Высота строки для вертикального выравнивания текста */
+  text-align: center; /* Горизонтальное выравнивание текста */
+}
+
+/* Последний элемент в каждом ряду не должен иметь отрицательный margin справа */
+.board-row .square:last-child {
+  margin-right: 0;
+}
+
+/* Последний ряд не должен иметь отрицательный margin снизу */
+.board-row:last-child .square {
+  margin-bottom: 0;
+}
